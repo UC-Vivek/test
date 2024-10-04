@@ -7,12 +7,58 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/JumboJuice.styles.css" asp-append-version="true" />
+    <style>
+        /* Styling for the dropdown button */
+        
+
+        /* Container for the dropdown menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Styling for the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: lightcoral;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            /* Styling for the links inside the dropdown */
+            .dropdown-content a {
+                color: black;
+                padding: 10px 10px;
+                text-decoration: none;
+                display: block;
+            }
+
+                /* Hover effect for the links inside the dropdown */
+                .dropdown-content a:hover {
+                    background-color: lightcoral;
+                }
+
+        /* Display dropdown content on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change background color of dropdown button on hover */
+        .dropdown:hover .dropbtn {
+            background-color: lightcoral;
+            border-color: black;
+        }
+
+
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <img src ="/image/logo.png" width="50" height="50"/>
+                <img src ="/images/logo.png" width="50" height="50"/>
                 <a class="navbar-brand" asp-area="" asp-page="/Index">JumboJuice</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -27,6 +73,16 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <!-- Admin dropdown menu -->
+                    <div class="dropdown">
+                        <a class="nav-link dropbtn">
+                            <img src="/images/cart.jpg" alt="Cart" width="30" height="30" />
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/ShoppingCart/Index">Shopping Cart</a> 
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Order/Index">Orders</a>
+                        </div>
+                    </div>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
