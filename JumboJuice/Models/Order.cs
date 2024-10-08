@@ -10,7 +10,7 @@
         public int CustomerId { get; set; }
         public Customer? Customers { get; set; } // Many-to-One with Customer
                                                  // Navigation properties
-        public List<Item>? Items { get; set; } // Many-to-Many with Item
-        public ShoppingCart? ShoppingCart { get; set; } // One-to-One with Cart
+        public List<OrderItem>? OrderItems { get; set; }  // Each Order has multiple OrderItems
+        public ShoppingCart? Carts { get; set; } // One-to-One with Cart
     }
 }

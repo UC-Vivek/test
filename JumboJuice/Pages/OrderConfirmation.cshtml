@@ -1,0 +1,35 @@
+﻿@page "{orderId:int}"
+@model JumboJuice.Pages.OrderConfirmationModel
+<h2>Order Confirmation</h2>
+
+@if (Model.Order != null)
+{
+    <p>Thank you for your order! Your order has been successfully placed.</p>
+    <p><strong>Order Number:</strong> #@Model.Order.OrderId</p>
+    <p><strong>Order Date:</strong> @Model.Order.OrderDate.ToString("g")</p>
+
+    <h3>Order Summary</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Order.OrderItems)
+            {
+                <tr>
+                    <td>@item.Item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>@((item.Quantity * item.Price).ToString("C"))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p><strong>Total Amount:</strong> @Model.Order.TotalAmount.ToString("C")</p>
+}
