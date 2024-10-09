@@ -92,17 +92,29 @@
         font-style: italic;
     }
 
-    /* Social media icons */
-    .social-media {
-        text-align: center;
-        margin: 20px 0;
+
+
+    .testimonial-card {
+        background-color: pink;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        transition: transform 0.3s;
     }
 
-        .social-media a {
-            margin: 0 10px;
-            color: #333;
-            font-size: 1.5em;
+        .testimonial-card:hover {
+            transform: translateY(-5px);
         }
+
+    .testimonial-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+    }
+
 
     /* Footer */
     .footer {
@@ -116,16 +128,24 @@
             margin: 0;
             color: #333;
         }
+
+    .promo-section text center {
+        background-color: pink;
+        padding: 4rem 2rem;
+        border-radius: 15px;
+        margin: 4rem 0;
+    }
 </style>
 <div class="text-center">
     <h1 class="display-4" style="color: #ff6347;">Welcome to Jumbo Juice</h1>
-    <p>
-        <a href="https://www.instagram.com/">Instagram></a>
-        <a href="https://www.facebook.com/">Facebook></a>
-    </p>
+    <div class="mt-3">
+        <a href="https://www.instagram.com/" class="btn btn-outline-dark me-2">Instagram</a>
+        <a href="https://www.facebook.com/" class="btn btn-outline-dark">Facebook</a>
+    </div><br />
+
 </div>
 @*Automatically Carousel*@
-<div id="carouselExampleIndicators" class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="2000">
+<div id="carouselExampleIndicators" class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="1000">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="~/images/Peach.png" class="d-block w-100" alt="Peaches">
@@ -166,72 +186,82 @@
         <div class="menu-title" style="color: #ff6347;">OUR MENU</div>
         <div class="menu-items">
             <div class="menu-item">
-                <img src="~/images/pumpkin logo.jpg" alt="Pumpkin">
-                <div class="menu-item-label">Pumpkin Juice{Star Juice}</div>
+                <a href="https://localhost:7081/items">
+                    <img src="~/images/Pumpkin Juice.jpg" alt="Pumpkin">
+                    <div class="menu-item-label">Pumpkin Juice{Star Juice}</div>
+                </a>
             </div>
             <div class="menu-item">
-                <img src="~/images/Screenshot 2024-10-02 183142.png" alt="Peach">
-                <div class="menu-item-label">Beverages</div>
+                <a href="https://localhost:7081/items">
+                    <img src="~/images/Screenshot 2024-10-02 183142.png" alt="Peach">
+                    <div class="menu-item-label">Beverages</div>
+                </a>
             </div>
             <div class="menu-item">
-                <img src="~/images/Food.png" alt="Poké Bowls">
-                <div class="menu-item-label">Food</div>
+                <a href="https://localhost:7081/items">
+                    <img src="~/images/Food.png" alt="Poké Bowls">
+                    <div class="menu-item-label">Food</div>
+                </a>
             </div>
             <div class="menu-item">
-                <img src="~/images/Packs.png" alt="Food">
-                <div class="menu-item-label">Smoothies</div>
+                <a href="https://localhost:7081/items">
+                    <img src="~/images/Packs.png" alt="Food">
+                    <div class="menu-item-label">Smoothies</div>
+                </a>
             </div>
             <div class="menu-item">
-                <img src="~/images/Grab n Go.png" alt="Grab & Go">
-                <div class="menu-item-label">Grab & Go</div>
+                <a href="https://localhost:7081/items">
+                    <img src="~/images/Grab n Go.png" alt="Grab & Go">
+                    <div class="menu-item-label">Grab & Go</div>
+                </a>
             </div>
             <div class="menu-item">
-                <img src="~/images/Fresh Juice.png" alt="Fresh Juice Shots">
-                <div class="menu-item-label">Fresh Juice </div>
+                <a href="https://localhost:7081/items">
+                    <img src="~/images/Fresh Juice.png" alt="Fresh Juice Shots">
+                    <div class="menu-item-label">Fresh Juice</div>
+                </a>
             </div>
             <div class="menu-item">
-                <img src="~/images/Bowls.png" alt="Merchandise">
-                <div class="menu-item-label">Bowls</div>
+                <a href="https://localhost:7081/items">
+                    <img src="~/images/Bowls.png" alt="Merchandise">
+                    <div class="menu-item-label">Bowls</div>
+                </a>
             </div>
         </div>
     </div>
+    <section class="row align-items-center my-5">
+        <div class="col-md-6">
+            <img src="~/images/52f931f1da2125f496c357d062c06aa8.gif" alt="Jumbo Juice Animation" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+            <h3 class="mb-4">Experience the Jumbo Difference</h3>
+            <p>Jumbo Juice is a vibrant local juice shop catering to students and residents with top-notch juice blends and healthy drink alternatives. Whether you're zipping through our drive-through or stepping inside to place your order, we ensure convenience and a delightful experience. With a focus on quality and customer satisfaction, Jumbo Juice serves an array of delicious beverages that keep patrons coming back for more. It's the go-to place for anyone looking for a tasty, nutritious refreshment in the community. 🍹</p>
+        </div>
+        </div>
+    </section>
+    <section class="testimonials bg-light py-5 rounded">
+        <h2 class="section-title text-center">What Our Customers Are Saying</h2>
+        <div class="row">
+            @foreach (var testimonial in new[] {
+            ("rachel.jpg", "Rachel G.", "Jumbo Juice has the best smoothies in town! The Mango Magic is my absolute favorite. The staff is always friendly and the service is quick. Highly recommend!"),
+            ("phoebe.jpg", "Monica G.", "I love the variety of fresh juices at Jumbo Juice. The Green Detox is a must-try. The ambiance is great, and it's a perfect spot to relax and enjoy a healthy drink."),
+            ("Liam.jpg", "Liam Hemsworth", "Jumbo Juice never disappoints! The Berry Blast smoothie is delicious and refreshing. It's my go-to place for a quick, healthy pick-me-up.")
+            })
+            {
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="~/images/@testimonial.Item1" class="testimonial-image" alt="@testimonial.Item2">
+                        <p>"@testimonial.Item3"</p>
+                        <footer class="text-end">- @testimonial.Item2</footer>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+    <section class="promo-section text-center">
+        <h2 class="mb-4">JUST GOTTA JUMBO</h2>
+        <p>When you wanna feel your best, when you are flavor obsessed, there's only one way to refresh – you just gotta Jumbo. For over 25 years, we've been bringing the whoa to your whirl'd and the fresh to flavor with our smoothies, bowls, juices, and shots. Now you can also taste the impossible with our snacks or stay chill with iced bevvies.</p>
+        <a href="https://localhost:7081/items" class="btn btn-custom btn-lg mt-3">Order Now</a>
+    </section>
 
-    <div class="client">
-        <h1 style="color: #ff6347;">WHAT OUR CUSTOMERS ARE SAYING</h1>
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="~/images/phoebe.jpg" width="40px" height="220" class="card-img-top" alt="Client 1">
-                    <div class="card-body">
-                        <p>Jumbo Juice has the best smoothies in town! The Mango Magic is my absolute favorite. The staff is always friendly and the service is quick. Highly recommend!<br /> - Rachel G.</p>
-                    </div>
-                    <div class="card-footer">
-                        Rachel G.
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="~/images/rachel.jpg" width="40px" height="220" class="card-img-top" alt="Client 2">
-                    <div class="card-body">
-                        <p>I love the variety of fresh juices at Jumbo Juice. The Green Detox is a must-try. The ambiance is great, and it's a perfect spot to relax and enjoy a healthy drink.<br /> - Monica G.</p>
-                    </div>
-                    <div class="card-footer">
-                        Monica G.
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="~/images/Liam.jpg" width="40px" height="220" class="card-img-top" alt="Client 3">
-                    <div class="card-body">
-                        <p>Jumbo Juice never disappoints! The Berry Blast smoothie is delicious and refreshing.
-                    </div>
-                    <div class="card-footer">
-                        Liam Hemsworth.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </main>

@@ -1,0 +1,126 @@
+﻿@page
+@model JumboJuice.Pages.About_usModel
+@{
+    ViewData["Title"] = "About Us";
+}
+
+<style>
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr auto; /* Adjust column widths as needed */
+        grid-gap: 20px; /* Add spacing between columns */
+    }
+
+    .about-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+        .about-section h1,
+        .about-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .about-section p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+
+    .team-section {
+        background-color: lightblue;
+        padding: 40px 0;
+    }
+
+    .team-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .team-card {
+        width: 300px;
+        background-color: lightcyan;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px  pink;
+    }
+
+        .team-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+    .team-card-body {
+        padding: 20px;
+    }
+
+    .team-card-name {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #ff6347;
+        margin-bottom: 5px;
+    }
+
+    .team-card-position {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .team-card-description {
+        font-size: 0.9em;
+        color: #333;
+    }
+</style>
+
+<div class="main-container">
+    <img src="~/images/giphy.gif" alt="Jumbo Juice" style="width: 100%; height :500px;" />
+
+    <div class="about-section">
+        <h2>About Us</h2>
+        <p>Jumbo Juice is dedicated to serving students and locals with delicious, high-quality juice blends and healthy alternative drinks. Our team consists of skilled and passionate professionals who are committed to delivering the best experience to our customers. We strive to be the top juice shop in the community, known for our vibrant atmosphere and exceptional service.</p>
+
+        <h2>Our History</h2>
+        <p>Jumbo Juice started eight years ago in Cincinnati with the goal of providing refreshing and healthy beverages to our community. Our journey began with a simple idea to create a place where people could enjoy delicious drinks made from the finest ingredients. Over the years, we have grown and evolved, always maintaining our commitment to quality and customer satisfaction.</p>
+    </div>
+    </div>
+<div class="team-section">
+    <h2 style="text-align: center; margin-bottom: 30px;">Meet Our Team</h2> 
+    <div class="team-container">
+        <div class="team-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQGi32keIw-Ypw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726424330354?e=1733961600&v=beta&t=_lY1MLRt4ySYjB02JV2XxaMfzVz3pr5brT-Jf-Ugclw" alt="Vivek ">
+            <div class="team-card-body">
+                <h3 class="team-card-title">Vivek Maddukuri</h3>
+                <p class="team-card-position">Marketing Coordinator</p>
+                <p class="team-card-description">Vivek has been a driving force in promoting Jumbo Juice through innovative marketing strategies. His expertise in online marketing has helped the business reach new heights.</p>
+                <a href="https://www.linkedin.com/in/vivek-maddukuri/" class="team-card-link">LinkedIn</a>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5635AQHoyMXy7xaIRQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1726456235461?e=1729054800&v=beta&t=0ZhrrOP3PA98woRfAi49ehWBry67P3GrC48wGCcI6lE" alt="Josh Pai">
+            <div class="team-card-body">
+                <h3 class="team-card-title">Josh Pai</h3>
+                <p class="team-card-position">Customer Engagement Specialist</p>
+                <p class="team-card-description">Josh Pai is dedicated to ensuring that every customer has a memorable experience at Jumbo Juice. His commitment to customer service makes her an invaluable team member.</p>
+                <a href="https://www.linkedin.com/in/josh-pai/" class="team-card-link">LinkedIn</a>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQEv6ZUeiVpVdQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726446772117?e=1733961600&v=beta&t=rSHCTGq3nqsuH-52wyjWmkROSbmxuMjRTU67fXG05-U" alt="Neetu Turan">
+            <div class="team-card-body">
+                <h3 class="team-card-title">Neetu Turan</h3>
+                <p class="team-card-position">Operations Manager</p>
+                <p class="team-card-description">As Operations Manager, Neetu  ensures that all aspects of Jumbo Juice run smoothly. She is known for her organizational skills and dedication to maintaining high standards.</p>
+                <a href="https://www.linkedin.com/in/neetu-turan/" class="team-card-link">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</div>
