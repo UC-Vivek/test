@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/JumboJuice/Data/Migrations/20241009013053_s1.cs
+/JumboJuice/Data/Migrations/20241009013053_s1.Designer.cs
+/JumboJuice/Data/Migrations/20241009053050_s2.cs
+/JumboJuice/Data/Migrations/20241009053050_s2.Designer.cs
+/JumboJuice/Data/Migrations/ApplicationDbContextModelSnapshot.cs
