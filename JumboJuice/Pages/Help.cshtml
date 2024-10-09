@@ -2,97 +2,175 @@
 @model JumboJuice.Pages.HelpModel
 @{
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumbo Juice Help Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-<div class="help-center">
-    <h2>We Deal with the following Four Classes</h2>
-</div>
-<div id="slider">
-    <a href="#" class="control_next">></a>
-    <a href="#" class="control_prev"><</a>
-    <ul>
-        <li style="background: #aaa;"><a href="/salesoffices">Item</a></li>
-        <li style="background: #aaa;"><a href="/agents">ShoppingCart</a></li>
-        <li style="background: #aaa;"><a href="/dwellings">Order</a></li>
-        <li style="background: #aaa;"><a href="/cities">Customer</a></li>
-    </ul>
-</div>
+        .help-center {
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
 
-<div class="client">
-    <h1>How to navigate our website</h1>
-    <div class="review1">
-        <div class="rv_img1">
-            <img src="~/images/help1.png" style="width:100%">
-        </div>
-        <div class="rv_text1">
-            <p> functionalities(ShoppingCart, Order, Login ) can be found in the navigation tab.</p>
-        </div>
-    </div>
-    <div class="review2">
-        <div class="rv_text2">
-            <p>After clicking on anyone of them you will land on the index page of that particular functionality, where you can find option to create a new entry, edit an existing entry, delete an existing entry or view details of an existing entry, as shown in the screenshot.</p>
-        </div>
-        <div class="rv_img2">
-            <img src="~/images/help2.png" width="500" height="200">
-        </div>
-    </div>
-    <div class="review3">
-        <div class="rv_img3">
-            <img src="~/images/help3.png" style="width:100%">
-        </div>
-        <div class="rv_text3">
-            <p>If you want to create a new entry you can click on create and fill the form and submit.</p>
-        </div>
-    </div>
-    <div class="review2">
-        <div class="rv_text2">
-            <p>If you want to view the details of an existing entry, click on details button and view the details.</p>
-        </div>
-        <div class="rv_img2">
-            <img src="~/images/help4.png" style="width:100%">
-        </div>
-    </div>
-    <div class="review3">
-        <div class="rv_img3">
-            <img src="~/images/help5.png" style="width:100%">
-        </div>
-        <div class="rv_text3">
-            <p>If you want to delete an existing record, please click on the delete button and confirm the deletion. If you don't want to delete the record click on the cancel button.'</p>
-        </div>
-    </div>
-    <div class="review2">
-        <div class="rv_text2">
-            <p>If you want to edit an existing entry, click on edit button and edit the field of your choice and save the edited value. All these four options: Create, Details, Edit and Delete are same for the four functionalities: Sales Offices, Agents, Dwellings and Cities</p>
-        </div>
-        <div class="rv_img2">
-            <img src="~/images/help9.png" style="width:100%">
-        </div>
-    </div>
-    <div class="review2">
-        <div class="rv_img2">
-            <img src="~/images/help6.png" width="500" height="200">
-        </div>
-        <div class="rv_text2">
-            <p>Dwelling has an additional option of Search. You can search for a Dwelling based on Dwelling Name. Click on Search button for searching.</p>
-        </div>
-    </div>
-    <div class="review2">
+        .client {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-        <div class="rv_text2">
-            <p>Enter the name you want to search in the search box and click on Search button.</p>
+        .review1, .review2, .review3 {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .rv_img1, .rv_img2, .rv_img3 {
+            flex: 1;
+        }
+
+        .rv_text1, .rv_text2, .rv_text3 {
+            flex: 2;
+            padding: 0 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #slider {
+            position: relative;
+            overflow: hidden;
+            margin: 20px auto 0 auto;
+            border-radius: 4px;
+        }
+
+            #slider ul {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                height: 200px;
+                list-style: none;
+            }
+
+
+        a.control_prev, a.control_next {
+            position: absolute;
+            top: 40%;
+            z-index: 999;
+            display: block;
+            padding: 4% 3%;
+            width: auto;
+            height: auto;
+            background: #2a2a2a;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+            a.control_prev:hover, a.control_next:hover {
+                opacity: 1;
+                -webkit-transition: all 0.2s ease;
+            }
+
+        a.control_prev {
+            border-radius: 0 2px 2px 0;
+        }
+
+        a.control_next {
+            right: 0;
+            border-radius: 2px 0 0 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="help-center">
+        <h2>Welcome to Jumbo Juice Help Center</h2>
+    </div>
+    <div class="client">
+        <h1>How to Navigate Our Website</h1>
+        <div class="review1">
+            <div class="rv_img1">
+                <img src="~/images/navi.png" alt="Navigation bar">
+            </div>
+            <div class="rv_text1">
+                <p>Key functionalities (Items, Shopping Cart, Orders, Customers) can be found in the navigation tab at the top of the page.</p>
+            </div>
         </div>
-        <div class="rv_img2">
-            <img src="~/images/help7.png" style="width:100%">
+        <div class="review2">
+            <div class="rv_text2">
+                <p>After clicking on any of these options, you'll land on the index page for that functionality. Here you can find options to create a new entry, edit an existing entry, delete an entry, or view details of an existing entry.</p>
+            </div>
+            <div class="rv_img">
+                <img src="~/images/index.png" alt="Index page">
+            </div>
+        </div>
+        <div class="review3">
+            <div class="rv_img3">
+                <img src="~/images/create.png" alt="Create new item form">
+            </div>
+            <div class="rv_text3">
+                <p>To create a new entry (e.g., a new juice item), click on "Create New" and fill out the form with the required information.</p>
+            </div>
+        </div>
+        <div class="review2">
+            <div class="rv_text2">
+                <p>To view details of an existing entry, click on the "Details" button next to the item you're interested in.</p>
+            </div>
+            <div class="rv_img2">
+                <img src="~/images/details.png" alt="Item details">
+            </div>
+        </div>
+        <div class="review3">
+            <div class="rv_img3">
+                <img src="~/images/delete.png" alt="Delete confirmation">
+            </div>
+            <div class="rv_text3">
+                <p>To delete an existing record, click on the "Delete" button and confirm your action. If you change your mind, you can click "Cancel" to abort the deletion.</p>
+            </div>
+        </div>
+        <div class="review2">
+            <div class="rv_text2">
+                <p>To edit an existing entry, click on the "Edit" button, modify the fields as needed, and save your changes.</p>
+            </div>
+            <div class="rv_img2">
+                <img src="~/images/edit.png" alt="Edit item form">
+            </div>
+        </div>
+        <div class="review2">
+            <div class="rv_img2">
+                <img src="/api/placeholder/400/200" alt="Shopping cart">
+            </div>
+            <div class="rv_text2">
+                <p>To add items to your cart, browse the juice menu and click "Add to Cart" for the items you want. You can view and modify your cart contents before proceeding to checkout.</p>
+            </div>
+        </div>
+        <div class="review2">
+            <div class="rv_text2">
+                <p>To place an order, review your cart, provide any necessary details, and click "Place Order". You can view your order history in the "Orders" section.</p>
+            </div>
+            <div class="rv_img2">
+                <img src="/api/placeholder/400/200" alt="Order placement">
+            </div>
         </div>
     </div>
-    <div class="review2">
-        <div class="rv_img2">
-            <img src="~/images/help8.png" style="width:100%">
-        </div>
-        <div class="rv_text2">
-            <p>If the name exists in the database the relevant results will be shown. Or else "no results found" message will be displayed.</p>
-        </div>
+    <div class="help-center">
+        <h2>We hope this guide helps! If you have any further questions, please don't hesitate to contact us. Enjoy your Jumbo Juice experience!</h2>
     </div>
-</div>
-<div class="help-center-1">
-    <h2><br />Hope that helps! Please reach out to us in case of any query. Thank you!</h2>
-</div>
+  
+
+      
+    </script>
+</body>
+</html>

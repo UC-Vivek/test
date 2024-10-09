@@ -49,9 +49,9 @@
         }
          .footer {
             background: linear-gradient(135deg, #4CAF50, #8BC34A);
-            color: white;
+            color: darkblue;
             padding: 40px 0;
-            margin-top: 50px;
+            margin-top: 10px;
             position:relative;
         }
 
@@ -73,7 +73,7 @@
             font-size: 14px;
         }
         .footer-links a {
-            color: white;
+            color: darkblue;
             margin: 0 15px;
             text-decoration: none;
             font-weight: 500;
@@ -121,10 +121,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/About Us">ABOUT US</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/About Us">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Contact Us">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Help">Help</a>
                         </li>
                     </ul>
                     <!-- Admin dropdown menu -->
@@ -146,7 +149,7 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div><br /></br></br></br></br>
+    </div><br /></br></br></br></br></br></br>
     <br />
     <br />
     <footer class="footer">
