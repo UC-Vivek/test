@@ -22,7 +22,6 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: lightcoral;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
@@ -36,7 +35,6 @@
             }
                 /* Hover effect for the links inside the dropdown */
                 .dropdown-content a:hover {
-                    background-color: lightcoral;
                 }
         /* Display dropdown content on hover */
         .dropdown:hover .dropdown-content {
@@ -44,7 +42,6 @@
         }
         /* Change background color of dropdown button on hover */
         .dropdown:hover .dropbtn {
-            background-color: lightcoral;
             border-color: black;
         }
          .footer {
@@ -134,7 +131,7 @@
                         </a>
                         <div class="dropdown-content">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Cart">Shopping Cart</a> 
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Order/Index">Orders</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/MyOrders">Orders</a>
                         </div>
                     </div>
                     <partial name="_LoginPartial" />

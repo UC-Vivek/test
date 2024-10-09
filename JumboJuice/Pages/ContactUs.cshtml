@@ -4,6 +4,7 @@
     ViewData["Title"] = "Contact Us";
 }
 
+<!-- Custom Styling -->
 <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,78 +13,93 @@
     }
 
     .CUcontainer {
-        max-width: 1000px;
+        max-width: 1100px;
         margin: 40px auto;
         background-color: #ffffff;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        border-radius: 15px;
-        overflow: hidden;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 20px;
     }
 
     .header {
-        background-color: #4CAF50;
+        background-color: #28a745;
         color: white;
-        padding: 30px 0;
+        padding: 40px 20px;
         text-align: center;
+        border-radius: 10px 10px 0 0;
     }
 
-    .contact-info, .contact-form, .map-section, .social-media {
-        padding: 30px;
+    .social-media a {
+        color: #333;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 1.5rem;
     }
 
-        .contact-info i, .social-media i {
-            color: #4CAF50;
-            margin-right: 10px;
+        .social-media a:hover {
+            color: #28a745;
         }
 
-        .social-media a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-        }
-
-            .social-media a:hover {
-                color: #4CAF50;
-            }
-
+    .map-section{
+        margin-top: 20px;
+    }
     .map-container {
-        height: 300px;
         background-color: #e9ecef;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #218838;
+    }
+
+    .contact-form {
+        margin-top: 20px; /* Added spacing to prevent overlap */
     }
 </style>
 
-    <div class="CUcontainer">
-        <div class="header">
-            <h1>Contact Jumbo Juice</h1>
-            <p>We'd love to hear from you!</p>
-        </div>
+<!-- Page Content -->
+<div class="CUcontainer">
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Contact Jumbo Juice</h1>
+        <p>We'd love to hear from you!</p>
+    </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Cincinnati, OH 12345</p>
-                    <p><i class="fas fa-phone"></i> (555) 555-5555</p>
-                    <p><i class="fas fa-envelope"></i> info@jumbojuice.com</p>
-                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm, Sat-Sun: 10am-4pm</p>
-                </div>
-
-                <div class="social-media">
-                    <h3>Follow Us</h3>
-                    <a href="https://www.facebook.com/your-fake-facebook-page"><i class="fab fa-facebook-square"></i></a>
-                    <a href="https://www.instagram.com/your-fake-instagram-account"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/your-fake-twitter-handle"><i class="fab fa-twitter-square"></i></a>
-                </div>
+    <!-- Main Section: Contact Info and Form -->
+    <div class="row mt-4">
+        <!-- Contact Info -->
+        <div class="col-md-6">
+            <div class="contact-info mb-4">
+                <h2>Get in Touch</h2>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Cincinnati, OH 12345</p>
+                <p><i class="fas fa-phone"></i> (555) 555-5555</p>
+                <p><i class="fas fa-envelope"></i> info@jumbojuice.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm, Sat-Sun: 10am-4pm</p>
             </div>
 
-            <div class="col-md-6">
-                <div class="contact-form">
-                    <h2>Send Us a Message</h2>
+            <!-- Social Media Links with Buttons -->
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                </br></br>
+                <a href="https://www.facebook.com/" class="btn btn-outline-dark mb-2" target="_blank">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="https://www.instagram.com/" class="btn btn-outline-dark mb-2" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <div class="card shadow-sm contact-form">
+                <div class="card-body">
+                    <h2 class="card-title">Send Us a Message</h2>
                     <form>
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
@@ -97,17 +113,17 @@
                             <label for="message" class="form-label">Message</label>
                             <textarea class="form-control" id="message" rows="4" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-success">Send Message</button>
+                        <button type="submit" class="btn btn-success w-100">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
-        <br />
-        <div class="map-section">
-            <h2>Find Us</h2>
-            <div class="map-container">
-                <img src="~/images/hg.png" alt="Map placeholder" style="max-width: 100%; height: auto;">
-            </div>
-        </div>
     </div>
 
+    <!-- Map Section -->
+    <div class="map-section">
+        <div class="map-container">
+            <img src="~/images/hg.png" alt="Map placeholder" style="max-width: 100%; height: auto;">
+        </div>
+    </div>
+</div>

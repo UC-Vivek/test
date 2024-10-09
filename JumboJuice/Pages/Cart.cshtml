@@ -1,40 +1,54 @@
 ﻿@page
 @model JumboJuice.Pages.CartModel
-<h2>Your Shopping Cart</h2>
+<h2>Shopping Cart</h2>
 
 @if (Model.CartItems.Count == 0)
 {
-    <p>Your cart is empty.</p>
+    <div class="alert alert-warning">Your cart is empty.</div>
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Item</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.CartItems)
-            {
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
                 <tr>
-                    <td>@item.Item.Name</td>
-                    <td>@item.Quantity</td>
-                    <td>@item.Price.ToString("C")</td>
-                    <td>@((item.Quantity * item.Price).ToString("C"))</td>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CartItems)
+                {
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="@Url.Content($"~/images/{item.Item.ImagePath}")" alt="@item.Item.Name" class="img-fluid me-3" style="width: 50px; height: 50px; object-fit: cover;" />
+                                <span>@item.Item.Name</span>
+                            </div>
+                        </td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Price.ToString("C")</td>
+                        <td>@((item.Quantity * item.Price).ToString("C"))</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
-    <p>Total: @Model.CartItems.Sum(ci => ci.Quantity * ci.Price).ToString("C")</p>
+    <div class="d-flex flex-column align-items-end mt-4">
+        <!-- Total Amount -->
+        <p class="h5 mb-3"><b>Total: @Model.CartItems.Sum(ci => ci.Quantity * ci.Price).ToString("C")</b></p>
 
-    <!-- Proceed to Checkout Button -->
-    <form method="post" asp-page-handler="Checkout">
-        <!-- Call the OnPostCheckoutAsync handler -->
-        <button type="submit" class="btn btn-primary">Proceed to Checkout</button>
-    </form>
+        <!-- Buttons: Keep Shopping and Proceed to Checkout -->
+        <div>
+            <!-- Keep Shopping Button -->
+            <a href="/Shop" class="btn btn-outline-success me-3">Keep Shopping</a> 
+            <!-- Proceed to Checkout Button -->
+            <form method="post" asp-page-handler="Checkout" class="d-inline">
+                <button type="submit" class="btn btn-orange">Proceed to Checkout</button>
+            </form>
+        </div>
+    </div>
 }
