@@ -22,7 +22,6 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: lightcoral;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
@@ -36,7 +35,6 @@
             }
                 /* Hover effect for the links inside the dropdown */
                 .dropdown-content a:hover {
-                    background-color: lightcoral;
                 }
         /* Display dropdown content on hover */
         .dropdown:hover .dropdown-content {
@@ -44,7 +42,6 @@
         }
         /* Change background color of dropdown button on hover */
         .dropdown:hover .dropbtn {
-            background-color: lightcoral;
             border-color: black;
         }
          .footer {
@@ -118,13 +115,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Shop">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/About Us">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Contact Us">Contact Us</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/ContactUs">Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Help">Help</a>
@@ -136,8 +133,8 @@
                             <img src="/images/cart.jpg" alt="Cart" width="30" height="30" />
                         </a>
                         <div class="dropdown-content">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/ShoppingCart/Index">Shopping Cart</a>
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Order/Index">Orders</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Cart">Shopping Cart</a> 
+                            <a class="nav-link text-dark" asp-area="" asp-page="/MyOrders">Orders</a>
                         </div>
                     </div>
                     <partial name="_LoginPartial" />
@@ -148,8 +145,13 @@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
+            <br /></br></br></br></br>
         </main>
+<<<<<<< HEAD
     </div><br /></br></br></br></br></br></br>
+=======
+    </div>
+>>>>>>> a89275834b52c49f3abf2422a25208bceccd6992
     <br />
     <br />
     <footer class="footer">

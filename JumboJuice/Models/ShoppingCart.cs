@@ -11,7 +11,7 @@
         // Navigation property: Cart can have multiple items
         public List<ShoppingCartItem>? ShoppingCartItems { get; set; }
 
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
         public Order? Orders { get; set; } // One-to-One with Order
 
     }

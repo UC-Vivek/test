@@ -20,3 +20,49 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.image-wrapper {
+    width: 100%;
+    padding-top: 100%; /* Aspect ratio of 1:1 (square) */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+    .image-wrapper:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-wrapper img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image covers the area */
+    }
+
+/* Price styling to make it stand out */
+.price-tag {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Button hover effects */
+.btn-success:hover {
+    background-color: #28a745;
+}
+
+.btn-orange {
+    background-color: orange;
+    color: white; /* Change text color if needed */
+    border-color: orange; /* Adjust border color */
+}
+
+    .btn-orange:hover {
+        background-color: darkorange; /* Optional hover effect */
+        border-color: darkorange;
+    }
+
+    
