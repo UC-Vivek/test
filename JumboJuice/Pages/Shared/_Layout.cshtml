@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/JumboJuice.styles.css" asp-append-version="true" />
     <style>
-        /* Styling for the dropdown button */
-        
-
         /* Container for the dropdown menu */
         .dropdown {
             position: relative;
             display: inline-block;
+        }
+
+        .main-content {
+            min-height: 100vh;
         }
 
         /* Styling for the dropdown content */
@@ -26,7 +27,6 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
-
             /* Styling for the links inside the dropdown */
             .dropdown-content a {
                 color: black;
@@ -34,31 +34,82 @@
                 text-decoration: none;
                 display: block;
             }
-
                 /* Hover effect for the links inside the dropdown */
                 .dropdown-content a:hover {
                     background-color: lightcoral;
                 }
-
         /* Display dropdown content on hover */
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
         /* Change background color of dropdown button on hover */
         .dropdown:hover .dropbtn {
             background-color: lightcoral;
             border-color: black;
         }
+         .footer {
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+            position:relative;
+        }
 
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
+        .footer-logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+            .footer-links a:hover {
+                color: #FFD700;
+                text-decoration: underline;
+            }
+
+        .footer-social a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+            .footer-social a:hover {
+                color: #FFD700;
+                transform: translateY(-3px);
+            }
+
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+       
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <img src ="/images/logo.png" width="50" height="50"/>
+                <img src="/images/logo.png" width="50" height="50" alt="JumboJuice Logo" />
                 <a class="navbar-brand" asp-area="" asp-page="/Index">JumboJuice</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +121,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Shop">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/About Us">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Contact Us">Contact Us</a>
                         </li>
                     </ul>
                     <!-- Admin dropdown menu -->
@@ -92,18 +146,36 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
+    </div><br /></br></br></br></br>
+    <br />
+    <br />
+    <footer class="footer">
         <div class="container">
-            &copy; 2024 - JumboJuice - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/images/logo.png" alt="JumboJuice Logo" />
+                </div>
+                <div class="footer-links">
+                    <a asp-area="" asp-page="/Index">Home</a>
+                    <a asp-area="" asp-page="/About Us">About Us</a>
+                    <a asp-area="" asp-page="/Contact Us">Contact Us</a>
+                    <a asp-area="" asp-page="/Help">Help</a>
+                    <a asp-area="" asp-page="/Privacy">Privacy</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JumboJuice. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
