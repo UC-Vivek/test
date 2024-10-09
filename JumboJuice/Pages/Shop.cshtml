@@ -1,0 +1,39 @@
+﻿@page
+@model ShopModel
+@{
+    ViewData["Title"] = "Shop";
+}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Best Sellers</h1>
+    <div class="row">
+        @foreach (var item in Model.Items)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" src="@Url.Content($"~/images/{item.ImagePath}")" alt="@item.Name" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">@item.Ingredients</p>
+                        <p class="card-text"><strong>Price:</strong> @item.Price.ToString("C")</p>
+                        <p class="card-text"><strong>In Stock:</strong> @item.Stock</p>
+                        <a href="/Items/Details/@item.ItemId" class="btn btn-primary">Details</a>
+
+                        <!-- Add to Cart Form -->
+                        <form method="post" asp-page-handler="AddToCart">
+                            <!-- Use the AddToCart handler -->
+                            <input type="hidden" name="ItemId" value="@item.ItemId" />
+                            <input type="hidden" name="CustomerId" value="1" /> <!-- Replace with actual CustomerId -->
+
+                            <div class="form-group">
+                                <label for="quantity">Quantity:</label>
+                                <input type="number" name="Quantity" id="quantity" value="1" min="0" max="@item.Stock" class="form-control" />
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
