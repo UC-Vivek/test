@@ -185,48 +185,34 @@
     <div class="menu-container">
         <div class="menu-title" style="color: #ff6347;">OUR MENU</div>
         <div class="menu-items">
-            <div class="menu-item">
-                <a href="https://localhost:7081/items">
-                    <img src="~/images/Pumpkin Juice.jpg" alt="Pumpkin">
-                    <div class="menu-item-label">Pumpkin Juice{Star Juice}</div>
-                </a>
-            </div>
-            <div class="menu-item">
-                <a href="https://localhost:7081/items">
-                    <img src="~/images/Screenshot 2024-10-02 183142.png" alt="Peach">
-                    <div class="menu-item-label">Beverages</div>
-                </a>
-            </div>
-            <div class="menu-item">
-                <a href="https://localhost:7081/items">
-                    <img src="~/images/Food.png" alt="Poké Bowls">
-                    <div class="menu-item-label">Food</div>
-                </a>
-            </div>
-            <div class="menu-item">
-                <a href="https://localhost:7081/items">
-                    <img src="~/images/Packs.png" alt="Food">
-                    <div class="menu-item-label">Smoothies</div>
-                </a>
-            </div>
-            <div class="menu-item">
-                <a href="https://localhost:7081/items">
-                    <img src="~/images/Grab n Go.png" alt="Grab & Go">
-                    <div class="menu-item-label">Grab & Go</div>
-                </a>
-            </div>
-            <div class="menu-item">
-                <a href="https://localhost:7081/items">
-                    <img src="~/images/Fresh Juice.png" alt="Fresh Juice Shots">
-                    <div class="menu-item-label">Fresh Juice</div>
-                </a>
-            </div>
-            <div class="menu-item">
-                <a href="https://localhost:7081/items">
-                    <img src="~/images/Bowls.png" alt="Merchandise">
-                    <div class="menu-item-label">Bowls</div>
-                </a>
-            </div>
+            <a class="menu-item" asp-area="" asp-page="/Shop">
+                <img src="~/images/Pumpkin Juice.jpg" alt="Pumpkin">
+                <div class="menu-item-label">Pumpkin Juice{Star Juice}</div>
+            </a>
+            <a class="menu-item" asp-area="" asp-page="/Shop">
+                <img src="~/images/Screenshot 2024-10-02 183142.png" alt="Peach">
+                <div class="menu-item-label">Beverages</div>
+            </a>
+            <a class="menu-item" asp-area="" asp-page="/Shop">
+                <img src="~/images/Food.png" alt="Poké Bowls">
+                <div class="menu-item-label">Food</div>
+            </a>
+            <a class="menu-item" asp-area="" asp-page="/Shop">
+                <img src="~/images/Packs.png" alt="Food">
+                <div class="menu-item-label">Smoothies</div>
+            </a>
+            <a class="menu-item" asp-area="" asp-page="/Shop">
+                <img src="~/images/Grab n Go.png" alt="Grab & Go">
+                <div class="menu-item-label">Grab & Go</div>
+            </a>
+            <a class="menu-item" asp-area="" asp-page="/Shop">
+                <img src="~/images/Fresh Juice.png" alt="Fresh Juice Shots">
+                <div class="menu-item-label">Fresh Juice</div>
+            </a>
+            <a class="menu-item" asp-area="" asp-page="/Shop">
+                <img src="~/images/Bowls.png" alt="Merchandise">
+                <div class="menu-item-label">Bowls</div>
+            </a>
         </div>
     </div>
     <section class="row align-items-center my-5">
@@ -261,7 +247,7 @@
     <section class="promo-section text-center">
         <h2 class="mb-4">JUST GOTTA JUMBO</h2>
         <p>When you wanna feel your best, when you are flavor obsessed, there's only one way to refresh – you just gotta Jumbo. For over 25 years, we've been bringing the whoa to your whirl'd and the fresh to flavor with our smoothies, bowls, juices, and shots. Now you can also taste the impossible with our snacks or stay chill with iced bevvies.</p>
-        <a href="https://localhost:7081/items" class="btn btn-custom btn-lg mt-3">Order Now</a>
+        <a class="btn btn-custom btn-orange btn-lg mt-3" asp-area="" asp-page="/Shop">Order Now</a>
     </section>
 
 </main>
